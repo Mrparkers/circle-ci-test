@@ -10,8 +10,13 @@ describe('Queue', () => {
         chance = new Chance();
     });
 
-    it('should initialize as an empty queue', () => {
+    it('should initialize as an empty queue when no arguments are specified', () => {
         expect(queue.size()).to.equal(0);
+    });
+
+    it('should initialize the queue with elements when given an array in the constructor', () => {
+        let newQueue = new Queue([1, 2]);
+        expect(newQueue.size()).to.equal(2);
     });
 
     it('should add an element when enqueue() is called', () => {
