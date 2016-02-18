@@ -1,6 +1,11 @@
 export default class Queue {
-    constructor() {
+    constructor(array) {
         this.arr = [];
+        if (array !== undefined && array instanceof Array) {
+            for (let i of array) {
+                this.arr.push(i);
+            }
+        }
     }
 
     enqueue(item) {
